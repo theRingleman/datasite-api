@@ -1,4 +1,4 @@
-export type ProjectMembershipType = {
+export type ProjectMembershipInterface = {
   id: string;
   projectId: string;
   userId: string;

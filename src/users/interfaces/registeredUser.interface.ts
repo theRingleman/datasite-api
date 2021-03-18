@@ -1,4 +1,4 @@
-export type RegisteredUserType = {
+export type RegisteredUserInterface = {
   id: string;
   city: string;
   company: string;
