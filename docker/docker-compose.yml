@@ -8,4 +8,4 @@ services:
       - 8080:3000
     volumes:
       - '..:/usr/src/app'
-    command: 'npm run start:dev'
+    command: 'npm run start'
