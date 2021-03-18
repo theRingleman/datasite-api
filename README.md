@@ -1,13 +1,12 @@
 # Running the Application
 In order to run the application for the first time there are a few commands you will need to run.
- 1. `cd docker`
- 2. `docker-compose build`
- 3. `docker-compose up` - with the optional -d if you would like to daemonize the service.
+ 1. `npm run install`
+ 2. `cd docker`
+ 3. `docker-compose build`
+ 4. `docker-compose up` - with the optional -d if you would like to daemonize the service.
 
 # Installation
-In order to install all dependencies, the easiest way is to `cd` into the docker directory and run `docker-compose build`.
-In the docker file, all the npm calls are handled for you and there is no extra need to run everything locally.
-If you don't want to use docker, you can simple run `npm install`.
+In order to install all dependencies you run `npm install`.
 
 # Start the application in Development mode
 To start the application in development mode you run `docker-compose -f docker-compose.dev.yml up`
