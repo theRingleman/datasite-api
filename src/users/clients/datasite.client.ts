@@ -3,26 +3,23 @@ import { ProjectMembershipInterface } from '../interfaces/projectMembership.inte
 import { RegisteredUserInterface } from '../interfaces/registeredUser.interface';
 import { UnregisteredUserInterface } from '../interfaces/unregisteredUser.interface';
 import { HttpService, Injectable } from '@nestjs/common';
-import { Observable } from 'rxjs';
-import { AxiosResponse } from 'axios';
 
 @Injectable()
 export class DatasiteClient implements DatasiteClientInterface {
   constructor(private httpService: HttpService) {}
 
-  getProjectMemberships(): Observable<
-    AxiosResponse<ProjectMembershipInterface[]>
-  > {
-    return this.httpService.get('projectmemberships');
+  async getProjectMemberships(): Promise<ProjectMembershipInterface[]> {
+    const response = await this.httpService.get('projectmemberships').toPromise();
+    return response.data;
   }
 
-  getRegisteredUsers(): Observable<AxiosResponse<RegisteredUserInterface[]>> {
-    return this.httpService.get('registeredusers');
+  async getRegisteredUsers(): Promise<RegisteredUserInterface[]> {
+    const response = await this.httpService.get('registeredusers').toPromise();
+    return response.data;
   }
 
-  getUnregisteredUsers(): Observable<
-    AxiosResponse<UnregisteredUserInterface[]>
-  > {
-    return this.httpService.get('unregisteredusers');
+  async getUnregisteredUsers(): Promise<UnregisteredUserInterface[]> {
+    const response = await this.httpService.get('unregisteredusers').toPromise();
+    return response.data;
   }
 }
